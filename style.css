@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: beige;
+  background: rgb(99, 99, 99) url(images/bg.jpg) no-repeat top left / cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+#container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  padding-top: 2rem;
+}
+
+header #container {
+  text-align: center;
+}
+
+header #current-time {
+  font-size: 1.5rem;
+}
+
+header .todays-date {
+  display: flex;
+  justify-content: center;
+}
+
+header #current-day {
+  margin-right: 1rem;
+}
+
+header #current-day,
+header #current-date {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+section #container {
+  margin-top: 3rem;
+}
+
+form {
+  margin-top: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.task-input {
+  background: transparent;
+  color: beige;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid beige;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.task-input::placeholder {
+  color: rgb(177, 177, 168);
+}
+
+.btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.btn-add {
+  color: lightblue;
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
+
+.btn-add:hover,
+.btn-check:hover,
+.btn-trash:hover {
+  transform: scale(1.5);
+}
+
+.task-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#task-list {
+  list-style: none;
+  transition: all 750ms ease-out;
+}
+
+.new-task {
+  color: beige;
+  margin-top: 0.5rem;
+  border-bottom: 2px solid beige;
+  display: flex;
+  transition: all 750ms ease-out;
+}
+
+.new-task span {
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.btn-check {
+  color: greenyellow;
+  margin-right: 1rem;
+}
+
+.btn-trash {
+  color: red;
+}
+
+/* ********************************************JS effects */
+.fa-check,
+.fa-trash {
+  pointer-events: none;
+}
+
+.task-done {
+  opacity: 0.3;
+  position: relative;
+}
+
+.task-done::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  top: 50%;
+  background-color: red;
+}
+
+.throw {
+  transform: scale(-1) translateX(300px) translateY(400px) rotateZ(270deg);
+  opacity: 0;
+}
+
+.reminder {
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background-color: red;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* ********************************************MEDIA QUERY */
+@media only screen and (min-width: 400px) {
+  section #container {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header #container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header #current-time {
+    font-size: 1rem;
+  }
+
+  header .todays-date {
+    display: block;
+  }
+
+  header #current-day {
+    margin-right: 0;
+  }
+}
